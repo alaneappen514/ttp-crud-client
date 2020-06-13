@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import {
   AllCampusesContainer,
+  AllStudentContainer,
   CampusContainer,
   AddCampusFormContainer,
   EditCampusFormContainer,
@@ -12,6 +13,7 @@ const RoutesView = () => {
     <Switch>
       <Route exact path="/" component={AllCampusesContainer} />
       <Route exact path="/campuses" component={AllCampusesContainer} />
+      <Route exact path="/campuses/students" component={AllStudentContainer} />
       <Route exact path="/campuses/new" component={AddCampusFormContainer} />
       <Route exact path="/campuses/:id" component={CampusContainer} />
       <Route
