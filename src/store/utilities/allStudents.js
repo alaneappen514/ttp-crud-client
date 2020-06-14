@@ -11,16 +11,14 @@ const fetchAllStudents = (students) => {
         payload: students,
     };
 };
-
 //THUNK CREATORS//
 export const fetchAllStudentsThunk = () => (dispatch) =>{
     return axios
-     .get("/api/campuses/students")
+     .get("/api/students")
      .then((res)=> res.data)
      .then((students) => dispatch(fetchAllStudents(students)))
      .catch((err) => console.log(err));
 }
-
 //REDUCER//
 const reducer = (state= [], action) => {
     switch(action.type){

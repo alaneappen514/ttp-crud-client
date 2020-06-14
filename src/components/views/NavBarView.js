@@ -11,7 +11,7 @@ const NavBarView = (props) => {
       <Link to="/campuses" className="nav-link">
         Campuses
       </Link>
-      <Link to="/campuses/students" className="nav-link">
+      <Link to="/students" className="nav-link">
         Students
       </Link>
     </nav>
