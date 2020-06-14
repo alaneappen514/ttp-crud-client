@@ -6,4 +6,5 @@ export { default as StudentView } from "./StudentView";
 export { default as AddCampusFormView } from "./AddCampusFormView";
 export { default as AddStudentFormView } from "./AddStudentFormView";
 export { default as EditCampusFormView } from "./EditCampusFormView";
+export { default as EditStudentFormView } from "./EditStudentFormView"
 export { default as NavBarView } from "./NavBarView";

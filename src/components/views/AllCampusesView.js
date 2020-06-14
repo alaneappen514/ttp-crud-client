@@ -10,8 +10,10 @@ const AllCampusesView = (props) => {
 
   return (
     <div className="all-campuses">
+        <Link className="redbg" to={`/campuses/new`}>New Campus</Link>
+     
       {props.allCampuses.map((campus) => (
-        <div key={campus.id}>
+        <div className ="redBorder" key={campus.id}>
           <Link to={`/campuses/${campus.id}`}>
             <h1>{campus.name}</h1>
           </Link>
