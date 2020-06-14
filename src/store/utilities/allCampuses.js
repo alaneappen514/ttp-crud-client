@@ -58,11 +58,14 @@ export const addCampusThunk = (campus, ownProps) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const editCampusThunk = (id, campus) => (dispatch) => {
+export const editCampusThunk = (id, campus, ownProps) => (dispatch) => {
   return axios
     .put(`/api/campuses/${id}`, campus)
     .then((res) => res.data)
-    .then((updatedCampus) => dispatch(editCampus(updatedCampus)))
+    .then((updatedCampus) => {
+    dispatch(editCampus(updatedCampus))
+    ownProps.history.push(`/campuses/${updatedCampus.id}`);
+  })
     .catch((err) => console.log(err));
 };
 

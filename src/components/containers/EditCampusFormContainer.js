@@ -51,10 +51,10 @@ const mapState = (state) => {
   return { campus: state.campus };
 };
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, ownProps) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-    editCampus: (id, campus) => dispatch(editCampusThunk(id, campus)),
+    editCampus: (id, campus) => dispatch(editCampusThunk(id, campus, ownProps)),
   };
 };
 
