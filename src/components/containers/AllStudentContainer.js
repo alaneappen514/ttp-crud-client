@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchAllStudentsThunk } from "../../thunks"
+import { fetchAllStudentsThunk, deleteStudentThunk } from "../../thunks"
 import { AllStudentViews } from "../views"
 
 
@@ -10,10 +10,17 @@ class AllStudentContainer extends Component{
      this.props.fetchAllStudents();
  };
 
+
+
+ handleDelete = (id) => {
+    this.props.deleteStudent(id);
+  };
+
  render(){
     return(
          <AllStudentViews
           allStudents={this.props.allStudents}
+          handleDelete={this.handleDelete}
          />
      );
    }
@@ -30,6 +37,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
     return{
         fetchAllStudents: () => dispatch(fetchAllStudentsThunk()),
+        deleteStudent: (id) => dispatch(deleteStudentThunk(id)),
     };
 };
 
@@ -37,6 +45,7 @@ const mapDispatch = (dispatch) => {
 AllStudentContainer.protoTypes = {
     allStudents: PropTypes.array.isRequired,
     fetchAllStudents: PropTypes.func.isRequired,
+    deleteStudent: PropTypes.func.isRequired,
 };
 
 export default connect(mapState, mapDispatch)(AllStudentContainer);

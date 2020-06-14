@@ -24,6 +24,8 @@ const AllStudentViews = (props) => {
                        student.campus ? (student.campus.name) : ("Not Enrolled")
                      }
                  </h5>
+                 <button onClick={() => props.handleDelete(student.id)}>Delete</button>
+                 <button><Link to={`/students/${student.id}/edit`}>Edit</Link></button>
             </div>
             ))}
         </div>
